@@ -1,0 +1,27 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+{{#if post.title}}    
+    <div class="row">
+        <div class="col-4 ">
+            <div class="m-2 p-2 border border-primary border-2 rounded-3 task">
+                <h3>Task {{post.id}}</h3>
+                <hr>
+                <p>Task Title: {{post.title}}</p>
+                <p>Task status: {{post.body}}</p>
+                  <a href="/" class="btn btn-success">Edit</a>
+               <a href="/deleteCustomer/{{post}}" class="btn btn-danger">Delete</a>
+             
+              
+            </div>   
+        </div>  
+    </div>
+{{else}}
+<h2 class="alert alert-danger text-center">
+    Invalid task id 
+</h2>
+
+{{/if}}      
+
+</section>
+{{>footer}}

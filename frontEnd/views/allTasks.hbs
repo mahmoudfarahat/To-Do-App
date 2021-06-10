@@ -1,0 +1,26 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="row">
+        {{#each tasks}}
+        <div class="col-4 ">
+            <div class="m-2 p-2 border border-primary border-2 rounded-3 task">
+                <h3>Task {{this.id}}</h3>
+                <hr>
+                <p>Task Title: {{this.title}}</p>
+                <p>Task status: {{this.status}}</p>
+                <a href="/allTasks/{{@index}}" class="btn btn-primary">More</a>
+                <a href="/deleteCustomer/{{@index}}" class="btn btn-danger">Delete</a>
+                <a href="/" class="btn btn-success">Edit</a>
+            </div>
+        </div>
+ {{else}}
+     <div class="alert alert-danger text-centet">
+         No Tasks Yet
+     </div>
+            {{/each}}    
+    </div>
+    
+
+</section>
+{{>footer}}

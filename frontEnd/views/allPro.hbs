@@ -1,0 +1,26 @@
+{{>header}}
+{{>navbar}}
+ <section class="container my-3">
+    <div class="row">
+        {{#each posts}}
+        <div class="col-4 ">
+            <div class="m-2 p-2 border border-primary border-2 rounded-3 task">
+                <h3>Task {{this.id}}</h3>
+                <hr>
+                <p>Title: {{this.title}}</p>
+                <p>Body: {{this.body}}</p>
+                <a href="/allPro/{{this.id}}" class="btn btn-primary">More</a>
+                <a href="/deletePost/{{@index}}" class="btn btn-danger">Delete</a>
+                <a href="/" class="btn btn-success">Edit</a>
+            </div>
+        </div>
+ {{else}}
+     <div class="alert alert-danger text-centet">
+         No Tasks Yet
+     </div>
+            {{/each}}    
+    </div>
+    
+
+</section>
+{{>footer}}
